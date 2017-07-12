@@ -1,0 +1,21 @@
+<project name="Raytracer" default="run" basedir=".">
+	<target name="compile">
+		<javac srcdir="./src" includeantruntime="false"/>
+	</target>
+	<target name="debug" depends="clean">
+		<javac srcdir="./src" includeantruntime="false" debug="true" debuglevel="lines,vars,source"/>
+	</target>
+	<target name="clean">
+		<delete includeEmptyDirs="true" quiet="true">
+			<fileset dir="." includes="**/*.class"/>
+			<fileset dir="." includes="**/*.*~" defaultexcludes="no"/>
+			<fileset dir="META-INF"/>
+		</delete>
+	</target>
+	<target name="run" depends="compile">
+		<java classname="Raytracer" classpath="./src" fork="false"/>
+	</target>
+	<target name="who">
+		<echo message="Author: Chrys Adams"/>
+	</target>
+</project>
