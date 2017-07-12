@@ -27,7 +27,7 @@ The color of this new ray is then used as the color of the object at this point 
 If the ray does not collide with any object, the color of the background is used instead.
 
 ### Overview
-To render images in the manner Raytracer.java has three main components.
+To render images in this manner, Raytracer.java has three main components.
 The Camera, the Scene, and the contents of the Scene - Lights, and the Collidable geometry to be rendered.
 The Camera determines the focal point, direction, and resolution of the image to be rendered.
 Therefore it needs this information when constructed.
@@ -63,7 +63,7 @@ image.save("out/test.bmp");
 ### Collidables
 Any class that extends the abstract class Collidable may be added to the scene.
 At the moment there are two such classes: Sphere and Triangle.
-A collidable object must be able to tell the renderer whether collided with a ray, and how far along the ray the collision occurs.
+A collidable object must be able to tell the renderer whether it collided with a ray, and how far along the ray the collision occurs.
 ``` java
 public abstract double getCollision(Ray r);
 ```
